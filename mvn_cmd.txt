@@ -7,3 +7,7 @@ mvn install:install-file -Dfile=/Users/qhli/Downloads/spring-tx-3.0.7.RELEASE-so
 mvn install:install-file -Dfile=D:/spymemcached-2.10.3-javadoc.jar -DgroupId=net.spy -DartifactId=spymemcached -Dversion=2.10.3 -Dpackaging=jar -Dclassifier=javadoc
 
 ==========================================================================================
+下载源码
+mvn dependency:sources
+下载javadoc
+mvn dependnecy:resolve -Dclassifier=javadoc
