@@ -16,6 +16,8 @@ mvn install:install-file -Dfile=D:/spymemcached-2.10.3-javadoc.jar -DgroupId=net
 创建一个简单的Java工程：mvn archetype:generate -DgroupId=com.mycompany.example -DartifactId=Example</br>
 创建一个java的web工程：mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.mycompany.app -DartifactId=my-webapp</br>
 
+带上参数-DarchetypeCatalog=local，只读取本地的archetype-catalog.xml，用-DinterfactiveMode=false关闭交互模式</br>
+
 查看实际pom信息: mvn help:effective-pom</br>
 分析项目的依赖信息：mvn dependency:analyze 或 mvn dependency:tree</br>
 查看帮助信息：mvn help:help 或 mvn help:help -Ddetail=true</br>
