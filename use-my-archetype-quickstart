@@ -1,0 +1,4 @@
+cd my-archetype-quickstart</br>
+mvn clean install</br>
+cd ..</br>
+mvn archetype:generate -DarchetypeGroupId=org.qhli.app.maven.archetype -DarchetypeArtifactId=my-archetype-quickstart -DarchetypeVersion=1.0.0.SNAPSHOT -DarchetypeCatalog=local
