@@ -64,7 +64,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/ims</contextPath>
+                        <contextPath>/${artifactId}</contextPath>
                     </webApp>
                 </configuration>
             </plugin>
