@@ -5,4 +5,4 @@
 ### [如何使用my-archetype-webapp](https://github.com/liqxhx/maven-how/blob/master/use-my-archetype-webapp)
 
 
-### [如何使用my-archetype-quickstart](https://github.com/liqxhx/maven-how/blob/master/use-my-archetype-quickstart）
+### [如何使用my-archetype-quickstart](https://github.com/liqxhx/maven-how/blob/master/use-my-archetype-quickstart)
