@@ -1,0 +1,34 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+
+	<!-- 环境设置 -->
+	<settings>
+		<!-- 打开延迟加载 的开关 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!-- 是否要积极加载 -->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<!-- 是否启用二级缓存 -->
+		<setting name="cacheEnabled" value="false"/>
+	 
+	</settings>
+<!-- <typeAlias alias="Customer" type="Customer" /> -->
+		<!-- 通过package自动映射为简单的类名 -->
+<!-- 	<typeAliases>
+		
+		<package name="com.qhli.demo.${artifactId}.entity"/>
+	</typeAliases> -->
+
+	<!-- <mappers>
+		
+		<mapper resource="com/qhli/demo/${artifactId}/mapper/Customer-mapper.xml" />
+	</mappers> -->
+
+</configuration>

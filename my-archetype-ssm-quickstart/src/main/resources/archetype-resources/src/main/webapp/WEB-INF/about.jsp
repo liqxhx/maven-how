@@ -1,0 +1,86 @@
+<%@ page contentType="text/html; charset=utf-8" %>
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> about </title>
+
+    <meta name="description"
+          content="the world is colorful">
+
+    <script type="text/javascript" src="../resources/jquery/jquery.js"></script>
+<script type="text/javascript" src="../resources/bootstrap/bootstrap.js"></script>
+
+
+     <!-- Third-Party CSS -->
+    <link rel="stylesheet" href="../resources/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/3rd/others/blog-page.css">
+    
+
+    
+
+</head>
+
+
+    <body>
+    	
+    	
+    	<article class="post container">
+
+    <div class="row">
+
+    <div class="col-md-12">
+
+        <ul id="posts-list">
+            
+                
+                <li class="posts-list-item">
+                    <div class="posts-content">
+                        <span class="posts-list-meta">2017-11-13</span>
+                        <a class="posts-list-name bubble-float-left" href="">修改名称，并增加包生成</a>
+                        <span class="circle"></span>
+                    </div>
+                </li>
+                
+                <li class="posts-list-item">
+                    <div class="posts-content">
+                        <span class="posts-list-meta">2017-08-13</span>
+                        <a class="posts-list-name bubble-float-left" href="">修改pom，增加plugins，增加profiles对各版本jetty的配置</a>
+                        <span class="circle"></span>
+                    </div>
+                </li>
+                
+            
+                <li class="posts-list-item">
+                    <div class="posts-content">
+                        <span class="posts-list-meta">2017-06-22</span>
+                        <a class="posts-list-name bubble-float-left" href="">修改pom，增加build-> resources配置</a>
+                        <span class="circle"></span>
+                    </div>
+                </li>
+                
+            
+                
+            
+                
+                <li class="posts-list-item">
+                    <div class="posts-content">
+                        <span class="posts-list-meta">2017-06-01</span>
+                        <a class="posts-list-name bubble-float-left" href="">my-archetype-web初建</a>
+                        <span class="circle"></span>
+                    </div>
+                </li>
+                
+            
+              </ul> 
+            </div>
+    </div>
+        </article>
+    </body>
+  </html>

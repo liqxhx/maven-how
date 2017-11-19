@@ -1,0 +1,130 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+
+
+	<!-- logback <context-param> <param-name>logbackConfigLocation</param-name>
+		<param-value>WEB-INF/classes/logback.xml</param-value> </context-param> <listener>
+		<listener-class>com.yjf.common.log.LogbackConfigListener</listener-class>
+		</listener> -->
+	<!-- spring -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-*.xml</param-value>
+	</context-param>
+
+	<!-- 字符集 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<!-- <filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- <filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>
+			UserLoginFilter
+		</filter-class>
+	</filter> -->
+	<!-- springsecurity <filter> <filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		</filter> <filter-mapping> <filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
+
+
+		<!-- Druid配置web管理界面 -->
+	<!--<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+	</servlet>-->
+	<!-- springmvc -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 可以自定义servlet.xml配置文件的位置和名称，默认为WEB-INF目录下，名称为[<servlet-name>]-servlet.xml，如spring-servlet.xml -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+<!--<param-value>/WEB-INF/spring-mvc.xml</param-value>-->
+            <param-value>classpath:mvc-servlet.xml</param-value>
+		</init-param>
+
+		<!-- <init-param> <param-name>spring.profiles.active</param-name> <param-value>production</param-value>
+			</init-param> -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+<!--
+	DispatcherServlet拦截"/"，为了实现REST风格，拦截了所有的请求，那么同时对*.js,*.jpg等静态文件的访问也就被拦截了
+	要写在DispatcherServlet的前面， 让 defaultServlet先拦截请求，
+	Tomcat, Jetty, JBoss, and GlassFish 自带的默认Servlet的名字  "default"
+	Google App Engine 自带的 默认Servlet的名字  "_ah_default"
+	Resin 自带的 默认Servlet的名字   "resin-file"
+	WebLogic 自带的 默认Servlet的名字   "FileServlet"
+	WebSphere  自带的 默认Servlet的名字  "SimpleFileServlet"
+
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.css</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.js</url-pattern>
+	</servlet-mapping> -->
+
+	<!--<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>-->
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<!--
+		1、拦截*.do，例如：/user/add.do，弊端：所有的url都要以.do结尾。不会影响访问静态文件。
+		2、拦截/app/*，例如：/app/user/add，弊端：请求的url都要包含/app，@RequestMapping("/user/add")中不须要包含/app。
+		3、拦截/，例如：/user/add，弊端：对jpg,js,css静态文件的访问也被拦截不能正常显示。后面有解决办法。
+		4、拦截/*，可以走到Action中，但转发到jsp时再次被拦截，不能访问到jsp。
+		-->
+		<url-pattern>/path/*</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- <error-page> <error-code>404</error-code> <exception-type>/error/404.jsp</exception-type>
+		</error-page> <error-page> <error-code>500</error-code> <exception-type>/error/500.jsp</exception-type>
+		</error-page> -->
+
+</web-app>

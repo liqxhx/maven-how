@@ -1,0 +1,65 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${package}.mapper.SaleMapper">
+<!-- 
+	<resultMap type="Sale" id="SaleReulstMap" autoMapping="true">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="password" column="password"/>	
+		<result property="status" column="status"/>
+		<result property="descn" column="descn"/>	
+		<result property="errorCount" column="error_count"/>
+		<result property="lastLoginTime" column="last_login_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>	
+	</resultMap>
+
+	<insert id="insertSale" parameterType="Sale">
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			select seq_t_sales.nextval from dual
+		</selectKey>
+		insert into t_sales(id,name,password,status,descn,error_count,last_login_time) values(${symbol_pound}{id},${symbol_pound}{name},${symbol_pound}{password},${symbol_pound}{status},${symbol_pound}{descn},${symbol_pound}{errorCount},${symbol_pound}{lastLoginTime})
+	</insert>
+
+	<delete id="deleteSales" parameterType="list">
+		delete from t_sales
+		<if test="list != null">
+		<where>
+			<foreach collection="list" item="item_id" open="id in(" close=")" separator=",">
+				${symbol_pound}{item_id}
+			</foreach>
+		</where>
+		</if>
+	</delete>
+	
+	<delete id="deleteSaleById" parameterType="int">
+		delete from t_sales where id = ${symbol_pound}{value}
+	</delete>
+	
+	<update id="updateSale" parameterType="Sale">
+		update t_sales		
+		<set>
+		<if test="name !=null">name=${symbol_pound}{name},</if>
+		<if test="password !=null">password=${symbol_pound}{password},</if>
+		<if test="status != null">status = ${symbol_pound}{status},</if>
+		<if test="descn != null">descn =${symbol_pound}{descn},</if>
+		<if test="errorCount != null">error_count=${symbol_pound}{errorCount},</if>
+		<if test="lastLoginTime != null">last_login_time=${symbol_pound}{lastLoginTime},</if>
+		</set>
+		where id = ${symbol_pound}{id}
+	</update>
+	
+	<select id="getSales" resultMap="SaleReulstMap" parameterType="Sale">
+		select * from t_sales
+		<where>
+			<if test="id != null">id=${symbol_pound}{id}</if>
+			<if test="name != null">and name like concat(concat('%',${symbol_pound}{name}),'%')</if>
+			<if test="status != null">and status = ${symbol_pound}{status}</if>
+		</where>
+	</select>
+	
+	 <select id="getSaleById" parameterType="int" resultMap="SaleReulstMap">
+        select * from t_sales where id = ${symbol_pound}{value}
+    </select>-->
+</mapper>

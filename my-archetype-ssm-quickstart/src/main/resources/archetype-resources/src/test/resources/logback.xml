@@ -1,0 +1,44 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 按照易交易的打包规则,此日志文件仅仅用于本地测试. -->
+<!-- 日志组件启动时，打印调试信息，并监控此文件变化，周期60秒 -->
+<configuration scan="true" scanPeriod="60 seconds" debug="true">
+
+	<!--针对jul的性能优化 -->
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+	<!-- 配置文件，包括此文件内的所有变量的配置 -->
+	<!-- contextName主要是为了区分在一个web容器下部署多个应用启用jmx时，不会出现混乱 -->
+	<contextName>test</contextName>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{0}:%L- 
+				%msg%n</pattern> -->
+			<pattern>[%d{dd HH:mm:ss.SSS} %-5level][%thread] %logger{80}:%L -%msg%n</pattern>
+		</encoder>
+	</appender>
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+	<logger name="org.apache.ibatis" level="debug">
+		<appender-ref ref="STDOUT" />
+	</logger>
+    
+	<logger name="java.sql" level="debug">
+		<appender-ref ref="STDOUT" />
+	</logger>
+    
+	<logger name="${package}" level="info">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="com.alibaba.dubbo.monitor.dubbo.DubboMonitor"
+		level="warn">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	
+</configuration>
