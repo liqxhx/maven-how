@@ -1,0 +1,2 @@
+
+mvn archetype:generate -DarchetypeGroupId=com.qhli.apps.maven.archetype -DarchetypeArtifactId=my-archetype-ssm-quickstart -DarchetypeVersion=1.0.0-SNAPSHOT -DarchetypeCatalog=local
