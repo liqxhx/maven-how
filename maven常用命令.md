@@ -19,8 +19,14 @@ mvn dependency:tree -Dincludes=org.slf4j:log4j-over-slf4j
 ```
 
 ## 打包
-```
+```shell
 mvn clean package dependency:copy-dependencies -Dmaven.test.skip=true
+
+# -U 强制让Maven检查所有SNAPSHOT依赖更新
+# -o，--offline 离线模式工作
+# -B参数：该参数表示让Maven使用批处理模式构建项目，能够避免一些需要人工参与交互而造成的挂起状态
+mvn compile --settings D:/usr/apache-maven-3.5.0/conf/settings.xml -e -U -o
+
 ```
 
 ##手动安装jar到本地仓库
